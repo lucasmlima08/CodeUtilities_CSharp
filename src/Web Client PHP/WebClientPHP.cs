@@ -10,21 +10,21 @@ namespace CodeUtilities
 {
     class WebClientPHP
     {
-        public void methodPost(String string1, String string2)
+        public String methodPost(String string1, String string2)
         {
             WebClient webClient = new WebClient();
             var data = new NameValueCollection();
             data["string1"] = string1;
             data["string2"] = string2;
-            var read = webClient.UploadValues("http://example.com.br/script.php", data);
-            Console.WriteLine(read);
+            String read = webClient.UploadValues("http://example.com.br/script.php", data)+"";
+            return read;
         }
 
-        public void methodGet(String string1, String string2)
+        public String methodGet(String string1, String string2)
         {
             WebClient webClient = new WebClient();
-            string read = webClient.DownloadString("http://example.com.br/script.php?value1="+string1+"&value2="+string2);
-            Console.WriteLine(read);
+            String read = webClient.DownloadString("http://example.com.br/script.php?value1="+string1+"&value2="+string2);
+            return read;
         }
     }
 }
