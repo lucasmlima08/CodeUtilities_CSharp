@@ -13,9 +13,12 @@ namespace CodeUtilities
             var watch = System.Diagnostics.Stopwatch.StartNew();
 
             // code execution..
-
-            watch.Stop();
+            for(int i=0; i<999999999; i++);
+            // code execution..
+            
             long elapsedMs = watch.ElapsedMilliseconds;
+            watch.Stop();
+            
             return elapsedMs;
         }
     }
